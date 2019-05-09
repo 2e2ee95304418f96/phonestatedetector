@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="10dp"
+    tools:context=".MainActivity"
+    tools:ignore="HardcodedText,SpUsage">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下面数据仅做辅助测试参考，长按灰色区域即可复制结果 ©2019"
+            android:textColor="#cccccc"
+            android:textSize="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="检测是否有权限：READ_PHONE_STATE" />
+
+        <TextView
+            android:id="@+id/tv_permission"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_press_gray"
+            android:padding="10dp"
+            android:textSize="14dp"
+            tools:text="点击申请获取权限" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="手机信息，型号，系统版本，厂商" />
+
+        <TextView
+            android:id="@+id/tv_device"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_press_gray"
+            android:padding="10dp"
+
+            android:textSize="14dp"
+            tools:text="" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="iccid" />
+
+        <TextView
+            android:id="@+id/tv_iccid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_press_gray"
+            android:padding="10dp"
+
+            android:textSize="14dp"
+            tools:text="" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="deviceid" />
+
+        <TextView
+            android:id="@+id/tv_deviceid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_press_gray"
+            android:padding="10dp"
+
+            android:textSize="14dp"
+            tools:text="" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="serialnumber" />
+
+        <TextView
+            android:id="@+id/tv_serialnumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_press_gray"
+            android:padding="10dp"
+
+            android:textSize="14dp"
+            tools:text="" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="imei1" />
+
+        <TextView
+            android:id="@+id/tv_imei1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_press_gray"
+            android:padding="10dp"
+
+            android:textSize="14dp"
+            tools:text="" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="imei2" />
+
+        <TextView
+            android:id="@+id/tv_imei2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_press_gray"
+            android:padding="10dp"
+
+            android:textSize="14dp"
+            tools:text="" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="imsi/SubscriberId" />
+
+
+        <TextView
+            android:id="@+id/tv_imsi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_press_gray"
+            android:padding="10dp"
+
+            android:textSize="14dp"
+            tools:text="" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="根据SimOperatorName判断的运营商" />
+
+
+        <TextView
+            android:id="@+id/tv_simoperator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_press_gray"
+            android:padding="10dp"
+
+            android:textSize="14dp"
+            tools:text="" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="根据SimOperator判断的运营商" />
+
+
+        <TextView
+            android:id="@+id/tv_operator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_press_gray"
+            android:padding="10dp"
+
+            android:textSize="14dp"
+            tools:text="" />
+
+
+    </LinearLayout>
+
+
+</ScrollView>
