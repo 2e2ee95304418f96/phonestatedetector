@@ -20,8 +20,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvPermission;
     private TextView tvdevice;
     private TextView tviccid;
-    private TextView tvdeviceid;
-    private TextView tvserialnumber;
     private TextView tvimei1;
     private TextView tvimei2;
     private TextView tvimsi;
@@ -53,8 +51,6 @@ public class MainActivity extends AppCompatActivity {
         tvPermission = findViewById(R.id.tv_permission);
         tvdevice = findViewById(R.id.tv_device);
         tviccid = findViewById(R.id.tv_iccid);
-        tvdeviceid = findViewById(R.id.tv_deviceid);
-        tvserialnumber = findViewById(R.id.tv_serialnumber);
         tvimei1 = findViewById(R.id.tv_imei1);
         tvimei2 = findViewById(R.id.tv_imei2);
         tvimsi = findViewById(R.id.tv_imsi);
@@ -71,8 +67,6 @@ public class MainActivity extends AppCompatActivity {
 
         setOnLongClickCopy(tvdevice);
         setOnLongClickCopy(tviccid);
-        setOnLongClickCopy(tvdeviceid);
-        setOnLongClickCopy(tvserialnumber);
         setOnLongClickCopy(tvimei1);
         setOnLongClickCopy(tvimei2);
         setOnLongClickCopy(tvimsi);
@@ -99,8 +93,6 @@ public class MainActivity extends AppCompatActivity {
                 .toString();
         tvdevice.setText(deviceInfo);
         tviccid.setText(SystemUtils.getICCID(this));
-        tvdeviceid.setText(DeviceUtils.getIMEI(this));
-        tvserialnumber.setText(SystemUtils.getICCID(this));
         tvimei1.setText(SystemUtils.getIMEI(this, true));
         tvimei2.setText(SystemUtils.getIMEI(this, false));
         tvimsi.setText(SystemUtils.getIMSI(this));

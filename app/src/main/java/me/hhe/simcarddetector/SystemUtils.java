@@ -72,15 +72,15 @@ public class SystemUtils {
      *
      * @return 手机IMEI
      */
-    public static String getIMEI(Context context,boolean isSlot1) {
+    public static String getIMEI(Context context, boolean isSlot1) {
         TelephonyManager tm = (TelephonyManager) context.getSystemService(Activity.TELEPHONY_SERVICE);
         if (tm != null) {
             if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(context,"请在系统设置中打开天府通应用的读取电话状态权限",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "请在系统设置中打开天府通应用的读取电话状态权限", Toast.LENGTH_SHORT).show();
                 return "";
             }
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                return tm.getImei(isSlot1?0:1);
+                return tm.getImei(isSlot1 ? 0 : 1);
             } else {
                 return tm.getDeviceId();
             }
@@ -90,15 +90,17 @@ public class SystemUtils {
 
     public static String getIMSI(Context context) {
         TelephonyManager mTelephonyMgr = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
             String imsi = mTelephonyMgr.getSubscriberId();
             return imsi;
+        } else {
+            return "请先允许READ_PHONE_STATE权限";
         }
-        return "";
     }
 
     /**
      * 只有电信可以使用此方法
+     *
      * @param context
      * @return ""代表无权限，null代表无sim卡
      */

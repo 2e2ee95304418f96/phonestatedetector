@@ -55,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:text="iccid" />
+            android:text="iccid/serialnumber" />
 
         <TextView
             android:id="@+id/tv_iccid"
@@ -63,47 +63,16 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bg_press_gray"
             android:padding="10dp"
-
             android:textSize="14dp"
             tools:text="" />
+
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:text="deviceid" />
-
-        <TextView
-            android:id="@+id/tv_deviceid"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_press_gray"
-            android:padding="10dp"
-
-            android:textSize="14dp"
-            tools:text="" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:text="serialnumber" />
-
-        <TextView
-            android:id="@+id/tv_serialnumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_press_gray"
-            android:padding="10dp"
-
-            android:textSize="14dp"
-            tools:text="" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:text="imei1" />
+            android:text="imei1(8.0及以后为卡槽1)、deviceid(8.0以前)" />
 
         <TextView
             android:id="@+id/tv_imei1"
@@ -136,7 +105,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:text="imsi/SubscriberId" />
+            android:text="imsi、SubscriberId(getSubscriberId，非卡1，实际为流量卡的IMSI)" />
 
 
         <TextView
