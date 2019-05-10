@@ -1,17 +1,24 @@
 package me.hhe.simcarddetector;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentActivity;
+import android.support.v4.content.PermissionChecker;
+import android.telephony.SubscriptionInfo;
+import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.widget.Toast;
 
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -94,17 +101,17 @@ public class SystemUtils {
             String imsi = mTelephonyMgr.getSubscriberId();
             return imsi;
         } else {
-            return "请先允许READ_PHONE_STATE权限";
+            return "";
         }
     }
 
     /**
-     * 只有电信可以使用此方法
+     * 获取iccid，此方法获取的是流量卡的id，底层源码是用subscription_id(IMEI)获取的对应的iccid，所以和getImei一样，是获取到的流量卡的值
      *
      * @param context
      * @return ""代表无权限，null代表无sim卡
      */
-    public static String getICCID(Context context) {
+    public static String getSimSerialNumber(Context context) {
         TelephonyManager tm = (TelephonyManager) context.getSystemService(Activity.TELEPHONY_SERVICE);
         if (tm != null) {
             if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
@@ -115,5 +122,27 @@ public class SystemUtils {
         }
         return null;
     }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP_MR1)
+    public static List<SubscriptionInfo> getSimInfoBySubscriptionManager(Context context) {
+        List<SubscriptionInfo> iccidList = new ArrayList<>();
+
+        if (PermissionChecker.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            return iccidList;
+        }
+        iccidList = SubscriptionManager.from(context).getActiveSubscriptionInfoList();
+        if (iccidList == null){
+            return new ArrayList<>();
+        }
+        // 排序，保证按卡槽排序
+        Collections.sort(iccidList, new Comparator<SubscriptionInfo>() {
+            @Override
+            public int compare(SubscriptionInfo subscriptionInfo, SubscriptionInfo t1) {
+                return subscriptionInfo.getSimSlotIndex() - t1.getSimSlotIndex();
+            }
+        });
+        return iccidList;
+    }
+
 
 }

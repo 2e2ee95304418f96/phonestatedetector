@@ -55,10 +55,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:text="iccid/serialnumber" />
+            android:text="iccid(系统默认)/serialnumber" />
 
         <TextView
-            android:id="@+id/tv_iccid"
+            android:id="@+id/tv_serialnumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_press_gray"
+            android:padding="10dp"
+            android:textSize="14dp"
+            tools:text="" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="iccid1" />
+
+        <TextView
+            android:id="@+id/tv_iccid1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_press_gray"
@@ -66,7 +80,20 @@
             android:textSize="14dp"
             tools:text="" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="iccid2" />
 
+        <TextView
+            android:id="@+id/tv_iccid2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_press_gray"
+            android:padding="10dp"
+            android:textSize="14dp"
+            tools:text="" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -122,36 +149,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:text="根据SimOperatorName判断的运营商" />
+            android:text="卡1" />
 
 
         <TextView
-            android:id="@+id/tv_simoperator"
+            android:id="@+id/tv_simoperator1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_press_gray"
             android:padding="10dp"
-
             android:textSize="14dp"
             tools:text="" />
-
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:text="根据SimOperator判断的运营商" />
+            android:text="卡2" />
 
 
         <TextView
-            android:id="@+id/tv_operator"
+            android:id="@+id/tv_simoperator2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_press_gray"
             android:padding="10dp"
-
             android:textSize="14dp"
             tools:text="" />
+
 
 
     </LinearLayout>
